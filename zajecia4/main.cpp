@@ -48,6 +48,19 @@ void zapis (vector <probka> dane,string nazwa)
 zapisanie.close();
 
 }
+double liczy(vector<probka> wektor)
+{
+    double a=100000,b=100000;
+    for(int i=0;i<wektor.size();i++)
+    {
+        if(a<wektor[i].x)a=wektor[i].x;
+        if(b>wektor[i].x)b=wektor[i].x;
+    }
+        cout<<"min "<<a<<endl;
+        cout<<"max "<<b<<endl;
+        cout<<"dlugosc "<<a-b<<endl;
+
+}
 //vector <probka> tablica;
 //tablica push_back(p1);
 //cout<<tablica[0];
@@ -59,6 +72,7 @@ int main(int argc, char* argv[])
 string nazwa_pliku = argv[1];
 vector<probka>dane=wczytaj(argv[1]);
 zapis(dane,"nazwa.csv");
+liczy(dane);
 cin.get();
 
 return 0;
